@@ -1,6 +1,6 @@
 import Dependencies._
 
-inThisBuild(List(organization := "com.stackvista", scalaVersion := "2.13.13"))
+inThisBuild(List(organization := "io.github.stackvista", scalaVersion := "2.13.13"))
 
 lazy val root = (project in file(".")).settings(
   name := "pekko-http-pac4j",
