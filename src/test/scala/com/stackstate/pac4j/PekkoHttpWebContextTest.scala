@@ -11,7 +11,7 @@ import com.stackstate.pac4j.store.{ForgetfulSessionStorage, SessionStorage}
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpecLike
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 import scala.concurrent.duration._
 import org.apache.pekko.http.scaladsl.model.headers.Location
 
