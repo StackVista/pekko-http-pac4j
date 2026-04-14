@@ -43,6 +43,16 @@ class PekkoHttpActionAdapterTest extends AnyWordSpecLike with Matchers with Scal
       PekkoHttpActionAdapter.adapt(new UnauthorizedAction, context).futureValue.response shouldEqual HttpResponse(Unauthorized)
       context.getChanges.cookies.map(_.name) shouldBe List(PekkoHttpWebContext.DEFAULT_COOKIE_NAME)
     }
+    "convert 401 including content" in withContext { context =>
+      val action = new UnauthorizedAction
+      action.setContent("oops")
+      PekkoHttpActionAdapter.adapt(action, context).futureValue.response shouldEqual HttpResponse(
+        Unauthorized,
+        Nil,
+        HttpEntity(ContentTypes.`text/plain(UTF-8)`, ByteString("oops"))
+      )
+      context.getChanges.cookies.map(_.name) shouldBe List(PekkoHttpWebContext.DEFAULT_COOKIE_NAME)
+    }
     "convert 302 to SeeOther (to support login flow) (direct client)" in withContext { context =>
       val r = PekkoHttpActionAdapter.adapt(new FoundAction("/login"), context).futureValue.response
       r.status shouldEqual SeeOther
