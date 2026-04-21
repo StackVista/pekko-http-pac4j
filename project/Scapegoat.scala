@@ -11,7 +11,7 @@ object Scapegoat extends AutoPlugin {
   import ScapegoatSbtPlugin.autoImport._
 
   override def projectSettings = Seq(
-    ThisBuild / scapegoatVersion := "2.1.6",
+    ThisBuild / scapegoatVersion := "3.3.1",
     scapegoatReports := Seq("text"), // xml in 2.13 require extra dep
     scapegoatDisabledInspections := Seq("FinalModifierOnCaseClass"),
     pomPostProcess := {

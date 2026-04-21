@@ -23,7 +23,7 @@ import org.pac4j.core.profile.{CommonProfile, UserProfile}
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpecLike
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 import scala.concurrent.Future
 import scala.concurrent.duration._
 import org.pac4j.core.util.Pac4jConstants

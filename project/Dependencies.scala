@@ -2,8 +2,8 @@ import sbt._
 
 object Dependencies {
   val scalacheckVersion = "1.14.3"
-  val pekkoHttpVersion = "1.0.1"
-  val pekkoStreamsVersion = "1.0.3"
+  val pekkoHttpVersion = "1.3.0"
+  val pekkoStreamsVersion = "1.4.0"
   val pac4jVersion = "5.7.7"
   val scalaTestVersion = "3.2.2"
 
